@@ -645,15 +645,15 @@
     var m = document.getElementById('calc-min'), t = document.getElementById('calc-times'),
         r = document.getElementById('calc-rate'), oh = document.getElementById('calc-hours'),
         oc = document.getElementById('calc-cost'), fired = false;
-    function recalc(){
+    function recalc(fromInput){
       var mins = parseFloat(m.value)||0, times = parseFloat(t.value)||0, rate = parseFloat(r.value)||0;
       var hours = Math.round(mins*times*250/60);
       var cost = Math.round(hours*rate);
       oh.textContent = hours.toLocaleString('en-US');
       oc.textContent = cost.toLocaleString('en-US');
-      if(!fired && window.gtag){ gtag('event','calculator_use'); fired = true; }
+      if(fromInput && !fired && window.gtag){ gtag('event','calculator_use'); fired = true; }
     }
-    [m,t,r].forEach(function(el){ el.addEventListener('input', recalc); });
+    [m,t,r].forEach(function(el){ el.addEventListener('input', function(){ recalc(true); }); });
     recalc();
   })();
 
