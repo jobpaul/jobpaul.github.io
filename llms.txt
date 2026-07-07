@@ -1,0 +1,16 @@
+# Job Paul Automation & AI
+
+> Freelance automation and AI consultant based in West Palm Beach, FL, working with local businesses across Palm Beach County and South Florida and remotely across the United States. Services: business-process automation (RPA, Python, PowerShell), AI-agent workflows, Excel and data-entry automation, and web-portal automation for systems with no API. Free written process audit within two business days; fixed-price quotes. Phone: (772) 621-6100 · Email: Job.m.paul@gmail.com
+
+Job Paul is a working automation engineer with ~20 production automations (estimate) running at an enterprise today, including a compliance-screening pipeline covering roughly 8,000 people per pass.
+
+## Main
+
+- [Home — services, free process audit, cost calculator, FAQ, contact](https://jobpaulautomation.com/): the whole site is this one page
+- [Sitemap](https://jobpaulautomation.com/sitemap.xml)
+
+## Profiles
+
+- [LinkedIn](https://www.linkedin.com/in/job-paul)
+- [GitHub](https://github.com/jobpaul)
+- [Upwork](https://www.upwork.com/freelancers/~01923931c4a7cdd19c)
