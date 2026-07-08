@@ -32,7 +32,7 @@
   "url": "https://jobpaulautomation.com/",
   "image": "https://jobpaulautomation.com/og.png",
   "telephone": "+1-772-621-6100",
-  "email": "Job.m.paul@gmail.com",
+  "email": "job@jobpaulautomation.com",
   "description": "Business-process automation (RPA, Python, PowerShell) and AI-agent workflows for small and mid-size businesses. Free process audit; fixed-price quotes; unattended automations that pay for themselves in saved hours.",
   "address": {"@type": "PostalAddress", "addressLocality": "West Palm Beach", "addressRegion": "FL", "addressCountry": "US"},
   "areaServed": [
@@ -508,7 +508,7 @@
         <li>No spam, no newsletter — I read these myself.</li>
       </ul>
       <div class="socials">
-        <a id="email-link" href="mailto:Job.m.paul@gmail.com?subject=Free%20process%20audit">Job.m.paul@gmail.com</a>
+        <a id="email-link" href="mailto:job@jobpaulautomation.com?subject=Free%20process%20audit">job@jobpaulautomation.com</a>
         <a href="https://www.linkedin.com/in/job-paul" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/jobpaul" target="_blank" rel="noopener">GitHub</a>
         <span>West Palm Beach, FL · serving South Florida &amp; remote US</span>
@@ -570,7 +570,7 @@
 
 <footer>
   <div class="wrap">
-    <div class="foot-contact"><a class="tel-link" href="tel:+17726216100" data-label="phone_click_footer">(772) 621-6100</a> · <a href="mailto:Job.m.paul@gmail.com?subject=Free%20process%20audit">Job.m.paul@gmail.com</a> · West Palm Beach, FL</div>
+    <div class="foot-contact"><a class="tel-link" href="tel:+17726216100" data-label="phone_click_footer">(772) 621-6100</a> · <a href="mailto:job@jobpaulautomation.com?subject=Free%20process%20audit">job@jobpaulautomation.com</a> · West Palm Beach, FL</div>
     <div>© <span id="yr"></span> Job Paul · Automation &amp; AI · Built by hand (and a little AI)</div>
   </div>
 </footer>
@@ -673,7 +673,7 @@
       /* endpoint not configured — open an email draft instead so no lead is ever lost */
       var body = 'Name: ' + data.get('name') + '\nEmail: ' + data.get('email') +
                  '\nPhone: ' + (data.get('phone')||'-') + '\n\n' + data.get('message');
-      window.location.href = 'mailto:Job.m.paul@gmail.com?subject=' +
+      window.location.href = 'mailto:job@jobpaulautomation.com?subject=' +
         encodeURIComponent('Process audit request — ' + data.get('name')) +
         '&body=' + encodeURIComponent(body);
       trackLead('form_mailto_fallback');
@@ -690,7 +690,7 @@
         } else { throw new Error(); }
       })
       .catch(function(){
-        statusEl.textContent = 'Something hiccuped — email me directly at Job.m.paul@gmail.com';
+        statusEl.textContent = 'Something hiccuped — email me directly at job@jobpaulautomation.com';
         statusEl.style.color = '#b45309';
       });
   });
