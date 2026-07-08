@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Automate Data Entry in Excel (Step-by-Step) | Job Paul Automation &amp; AI</title>
+<meta name="description" content="Learn how to automate data entry in Excel with 7 ranked methods — no-code Power Query, VBA macros, Power Automate Desktop, Python, and RPA — step by step.">
+<link rel="canonical" href="https://jobpaulautomation.com/articles/how-to-automate-data-entry-in-excel.html">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#faf7f1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231d2433'/%3E%3Ctext%20x='32'%20y='42'%20font-family='Arial,sans-serif'%20font-size='28'%20font-weight='bold'%20fill='%23f59e0b'%20text-anchor='middle'%3EJP%3C/text%3E%3C/svg%3E">
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jobpaulautomation.com/articles/how-to-automate-data-entry-in-excel.html">
+<meta property="og:title" content="How to Automate Data Entry in Excel (Step-by-Step)">
+<meta property="og:description" content="Learn how to automate data entry in Excel with 7 ranked methods — no-code Power Query, VBA macros, Power Automate Desktop, Python, and RPA — step by step.">
+<meta property="og:image" content="https://jobpaulautomation.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-07">
+<meta property="article:author" content="Job Paul">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Automate Data Entry in Excel (Step-by-Step)">
+<meta name="twitter:description" content="Learn how to automate data entry in Excel with 7 ranked methods — no-code Power Query, VBA macros, Power Automate Desktop, Python, and RPA — step by step.">
+<meta name="twitter:image" content="https://jobpaulautomation.com/og.png">
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://jobpaulautomation.com/articles/how-to-automate-data-entry-in-excel.html#article",
+  "mainEntityOfPage": "https://jobpaulautomation.com/articles/how-to-automate-data-entry-in-excel.html",
+  "headline": "How to Automate Data Entry in Excel (Step-by-Step)",
+  "description": "Learn how to automate data entry in Excel with 7 ranked methods — no-code Power Query, VBA macros, Power Automate Desktop, Python, and RPA — step by step.",
+  "image": "https://jobpaulautomation.com/og.png",
+  "inLanguage": "en-US",
+  "datePublished": "2026-07-07",
+  "dateModified": "2026-07-07",
+  "author": {
+    "@type": "Person",
+    "name": "Job Paul",
+    "jobTitle": "Automation Engineer & AI Consultant",
+    "url": "https://jobpaulautomation.com/",
+    "sameAs": ["https://www.linkedin.com/in/job-paul", "https://github.com/jobpaul", "https://www.upwork.com/freelancers/~01923931c4a7cdd19c"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Job Paul Automation & AI",
+    "url": "https://jobpaulautomation.com/",
+    "logo": {"@type": "ImageObject", "url": "https://jobpaulautomation.com/og.png"}
+  },
+  "isPartOf": {"@type": "Blog", "@id": "https://jobpaulautomation.com/articles/#guides", "name": "Automation & AI Guides"}
+}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  {"@type": "Question", "name": "How do I automate data entry in Excel without writing code?", "acceptedAnswer": {"@type": "Answer", "text": "Power Query is the easiest no-code option. Connect it to a CSV, JSON, or web source once, apply your cleaning steps, and it refreshes automatically every time you open the file, no formulas or scripts required."}},
+  {"@type": "Question", "name": "How long does it take to set up Power Query for recurring imports?", "acceptedAnswer": {"@type": "Answer", "text": "Most Power Query connections take 15 to 30 minutes to configure for the first time. Once saved, the query runs on every refresh without any additional setup."}},
+  {"@type": "Question", "name": "Can I automate Excel data entry from a web form or portal?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Power Automate Desktop can read rows from an Excel table and submit them to a web form automatically. For portals with no export button, a full RPA bot is the more robust solution."}},
+  {"@type": "Question", "name": "What's the difference between a macro and Power Automate for Excel automation?", "acceptedAnswer": {"@type": "Answer", "text": "A macro (VBA) runs inside Excel and is best for moving data between sheets or tables within the same workbook. Power Automate connects Excel to external applications, web forms, databases, or other Microsoft 365 services, making it the right choice when data needs to move across systems."}},
+  {"@type": "Question", "name": "Is Python in Excel available to all Microsoft 365 users?", "acceptedAnswer": {"@type": "Answer", "text": "Python in Excel is available on Microsoft 365 for Windows (Version 2408 and later). It is not available in Excel for Mac or in standalone Excel desktop licenses as of mid-2026."}}
+]}
+</script>
+<style>
+  :root{
+    --paper:#faf7f1; --paper2:#f1ece1; --card:#ffffff; --line:#e3dccd;
+    --ink:#1d2433; --soft:#57637a; --teal:#0e6b75; --cta:#f59e0b; --cta-ink:#221803;
+    --green:#15803d; --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;letter-spacing:-.01em}
+
+  /* Buttons */
+  .btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:800;font-size:1rem;border:0;cursor:pointer}
+  .btn-primary{background:var(--cta);color:var(--cta-ink);box-shadow:0 2px 10px rgba(180,120,10,.25)}
+  .btn-primary:hover{filter:brightness(1.06);text-decoration:none}
+  .microline{font-size:.85rem;color:var(--soft);margin-top:10px}
+
+  /* Nav (same as homepage) */
+  nav{position:sticky;top:0;z-index:50;background:rgba(250,247,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
+  .logo{font-weight:800;font-size:1.05rem;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .logo span{color:var(--cta)}
+  .nav-links{display:flex;gap:20px;font-size:.92rem;align-items:center}
+  .nav-links a{color:var(--soft)}
+  .nav-links a:hover{color:var(--ink);text-decoration:none}
+  .nav-phone{font-weight:700;color:var(--ink) !important;white-space:nowrap}
+  .nav-cta{background:var(--cta);color:var(--cta-ink) !important;padding:9px 16px;border-radius:8px;font-weight:800;white-space:nowrap}
+  .nav-cta:hover{filter:brightness(1.06);text-decoration:none}
+  #menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 12px;font-size:1rem;cursor:pointer}
+
+  /* Article prose */
+  .article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 64px}
+  .crumb{font-size:.9rem;margin-bottom:18px}
+  .article-wrap h1{font-size:clamp(1.9rem,4.5vw,2.6rem);line-height:1.15;margin-bottom:14px}
+  .byline{color:var(--soft);font-size:.92rem;margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .article-wrap h2{font-size:1.55rem;margin:42px 0 12px}
+  .article-wrap h3{font-size:1.18rem;margin:30px 0 10px}
+  .article-wrap p{margin-bottom:16px}
+  .article-wrap ul,.article-wrap ol{margin:0 0 16px 24px}
+  .article-wrap li{margin-bottom:8px}
+  .article-wrap pre{background:var(--ink);color:#e8ecf4;border-radius:10px;padding:18px;overflow-x:auto;font-size:.85rem;line-height:1.5;margin:0 0 16px}
+  .article-wrap pre code{background:none;color:inherit;padding:0}
+  .article-wrap code{background:var(--paper2);border-radius:5px;padding:2px 6px;font-size:.88em;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .tldr{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--cta);border-radius:10px;padding:18px 22px;margin-bottom:28px;font-size:.98rem}
+  .tldr strong{color:var(--teal)}
+
+  /* CTA box */
+  .cta-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;text-align:center;margin:44px 0 8px}
+  .cta-box h2{margin:0 0 10px;font-size:1.45rem}
+  .cta-box p{color:var(--soft);max-width:560px;margin:0 auto 20px}
+  .cta-box .microline{margin-top:14px}
+
+  /* More guides */
+  .more-guides{margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
+  .more-guides h2{font-size:1.25rem;margin-bottom:14px}
+  .more-guides ul{list-style:none;margin:0}
+  .more-guides li{padding:8px 0;border-bottom:1px dashed var(--line)}
+  .more-guides li:last-child{border-bottom:0}
+
+  footer{border-top:1px solid var(--line);padding:30px 0 34px;color:var(--soft);font-size:.85rem;text-align:center}
+  footer .foot-contact{margin-bottom:8px}
+  footer a{font-weight:600}
+
+  @media(max-width:760px){
+    .nav-links{display:none;position:absolute;top:62px;left:0;right:0;background:var(--card);flex-direction:column;padding:18px 24px;border-bottom:1px solid var(--line);align-items:flex-start}
+    .nav-links.open{display:flex}
+    #menu-btn{display:block}
+    .article-wrap{padding:32px 24px 48px}
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap nav-inner">
+    <a class="logo" href="/">job<span>.</span>paul</a>
+    <button id="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="/articles/">All guides</a>
+      <a href="/#services">What I automate</a>
+      <a href="/#faq">FAQ</a>
+      <a class="nav-phone tel-link" href="tel:+17726216100" data-label="phone_click_article_header">(772) 621-6100</a>
+      <a class="nav-cta" href="/#contact">Get my free process audit</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<article class="article-wrap">
+  <p class="crumb"><a href="/articles/">← All guides</a></p>
+  <h1>How to Automate Data Entry in Excel (Step-by-Step)</h1>
+  <p class="byline">By <a href="/">Job Paul</a> — automation engineer &amp; AI consultant, West Palm Beach, FL · Published <time datetime="2026-07-07">July 7, 2026</time></p>
+  <div class="tldr"><strong>TL;DR:</strong> There are seven ways to automate data entry in Excel, ranked from no-code to fully engineered: Power Query for recurring CSV/JSON imports, an Excel form with data validation, VBA macros, Office Scripts, Power Automate Desktop flows, Python in Excel, and full RPA bots. Most Power Query connections take 15 to 30 minutes to set up and then refresh automatically every time you open the file. Move up to Power Automate Desktop or RPA when data has to reach web forms, portals with no export button, or three or more systems.</div>
+
+<p>If you've been searching for how to automate data entry in Excel, you're likely already familiar with the frustration: same columns, same source files, same tedious manual work that a well-built automation could handle in seconds. This pattern shows up in business after business: teams spending hours each week on manual Excel entry when even the simplest method on this list would give that time back permanently.</p>
+
+<p>This article covers seven ranked methods to automate data entry in Excel, from zero-code options that work out of the box to full RPA bots built for multi-system operations. You'll get a working macro snippet, a step-by-step Power Automate Desktop flow walkthrough, and the validation habits that separate a brittle automation from one that runs reliably month after month. Pick the method that matches your situation and implement it today.</p>
+
+<h2>Pick your method first: ranked by complexity and business size</h2>
+
+<h3>Methods at a glance: from zero-code to full RPA</h3>
+
+<p>Seven methods cover the full range of Excel automation scenarios. Here they are in order from least to most complex, along with the environment and business profile each one fits best:</p>
+
+<ul>
+<li>Power Query (no-code, desktop and Microsoft 365): best for solo operators and small teams importing recurring CSV, JSON, or web data.</li>
+<li>Form + Data Validation (no-code, desktop): best for teams using a structured input form inside Excel to reduce entry errors.</li>
+<li>Excel macro/VBA (low-code, desktop): best for small teams who need a button that transfers form inputs into a growing table.</li>
+<li>Office Scripts (low-code, Microsoft 365 cloud): a TypeScript-based alternative to VBA for cloud Excel users.</li>
+<li>Power Automate Desktop flow (low-code, Windows): best for operations teams submitting Excel rows to a web form or third-party portal.</li>
+<li>Python in Excel (scripted, Microsoft 365): best for finance and data-heavy teams running transformations that go beyond what formulas can handle.</li>
+<li>Full RPA bot (engineered, any environment): best for multi-system operations, compliance-grade outputs, and portals with no export button.</li>
+</ul>
+
+<p>Cloud-based Excel has shifted the balance significantly. Power Query and Power Automate now handle use cases that VBA macros dominated prior to around 2021, so your method choice depends partly on whether you're running Excel desktop or Microsoft 365.</p>
+
+<h3>Matching the right tool to your situation</h3>
+
+<p>Your choice comes down to where your data lives and what needs to happen to it. Consider three common profiles:</p>
+
+<ul>
+<li>A bookkeeper importing the same monthly CSV from a payroll platform should use Power Query: connect once, refresh automatically on file open, and never touch an import dialog again.</li>
+<li>An ops manager who needs Microsoft Forms responses to land in an Excel table automatically should use a Power Automate cloud flow, which handles that transfer with no code and no manual steps.</li>
+<li>An SMB with data living in a web portal that has no export button needs a Power Automate Desktop flow or a full RPA bot. Neither Power Query nor a macro can interact with a browser interface.</li>
+</ul>
+
+<h2>How to automate data entry in Excel with Power Query</h2>
+
+<h3>Connecting your first data source</h3>
+
+<p>Go to Data &gt; Get Data &gt; From File &gt; From Text/CSV, select your file, and the Power Query Editor opens automatically. Apply four key transformations, Use First Row as Headers, Split Column by Delimiter, Trim, and Rename Columns, to clean the data and map it to the correct column names every time the query runs.</p>
+
+<p>For JSON sources (common with form output or API exports), go to Data &gt; Get Data &gt; From File &gt; From JSON. The data typically arrives as a list of records. Click the two-arrow expansion icon in the column header to expand records into columns, and choose whether to prefix column names to avoid conflicts. For an API URL, use Data &gt; Get Data &gt; From Other Sources &gt; From Web and enter the formula Json.Document(Web.Contents(URL)) directly in the formula bar.</p>
+
+<p>Power Query saves every transformation step inside the query itself, so your cleaning and mapping logic runs automatically on every refresh without any manual intervention. To enable refresh on file open, go to Data &gt; Queries and Connections, right-click your query, select Properties, and check "Refresh data when opening the file."</p>
+
+<p>If your source CSV changes its filename each month, a common problem with bank or payroll exports, point the query at a folder instead of a specific file. Power Query picks up the latest file in the folder automatically, so your mapping rules apply without any edits to the query. For a deeper walk-through with screenshots, see <a href="https://learn.microsoft.com/en-us/power-query/" target="_blank" rel="noopener">Microsoft's official Power Query documentation</a>.</p>
+
+<h2>Automating data entry in Excel with macros and VBA</h2>
+
+<h3>Recording your first macro in six steps</h3>
+
+<p>Enable the Developer tab by right-clicking the ribbon and selecting Customize Ribbon. Rename your sheets to Input and Output for clarity, then insert an ActiveX Command Button on the Input sheet. In Excel, click Developer &gt; Record Macro, perform your data entry steps, then stop recording. Open the VBA editor with Alt + F11 to review or edit the recorded code. Save the workbook as .xlsm, not .xlsx: Excel will warn you that macros will be lost if you save in .xlsx format, so choose "Excel Macro-Enabled Workbook (.xlsm)" explicitly to preserve your code.</p>
+
+<p>Recorded macros use fixed cell references, which means they break the moment the table grows by one row. That's the exact problem the VBA snippet below solves.</p>
+
+<h3>The VBA snippet that handles dynamic tables correctly</h3>
+
+<p>Replace the recorded macro with this code in your module. It uses tbl.ListRows.Add(AlwaysInsert:=True) to append rows dynamically regardless of how many rows already exist in the table:</p>
+
+<pre><code>Private Sub AddData_Click()
+Dim wsInput As Worksheet
+Dim wsOutput As Worksheet
+Dim tbl As ListObject
+Dim newRow As ListRow
+
+Set wsInput = ThisWorkbook.Sheets("Input")
+Set wsOutput = ThisWorkbook.Sheets("Output")
+Set tbl = wsOutput.ListObjects("TableName")
+
+Set newRow = tbl.ListRows.Add(AlwaysInsert:=True)
+
+newRow.Range(1, 1).Value = wsInput.TextBox1.Value
+newRow.Range(1, 2).Value = wsInput.TextBox2.Value
+newRow.Range(1, 3).Value = wsInput.TextBox3.Value
+
+wsInput.TextBox1.Value = ""
+wsInput.TextBox2.Value = ""
+wsInput.TextBox3.Value = ""
+End Sub</code></pre>
+
+<p>Replace "TableName" with your actual table name and "TextBox1, TextBox2, and TextBox3" with your real control names. The ListObject structure expands the table automatically with each submission, so the macro never references a stale cell address. Always save a backup copy and test with dummy data before running any new macro against production data.</p>
+
+<h2>Power Automate Desktop flows for cross-app data entry</h2>
+
+<h3>Building the flow: from Excel table to web form submission</h3>
+
+<p>Launch Excel using the "Launch Excel" action and point it at your file path variable. Use "Read from Excel Worksheet" with "First line contains column names" set to True, which outputs an ExcelData table. Close Excel immediately after reading to release the file, then launch Chrome or Edge and use the Web Recorder to capture each form field.</p>
+
+<p>Wrap the recorded actions in a For Each loop iterating over ExcelData, and replace each hardcoded field value with CurrentItem['Column_Name']. For date columns, add a "Convert Datetime to Text" action before populating the field. For radio buttons (Gender, Yes/No), add an If condition inside the loop that selects the correct button based on the current row's value. Always capture UI elements using the "Add UI Element" button and target the HTML id or name attribute rather than screen coordinates, so selectors survive minor updates to the form layout.</p>
+
+<h3>Error handling that keeps the flow running after a failure</h3>
+
+<p>Wrap the For Each loop in a Try-Catch block. The Try section contains the full submission loop. The Catch section uses "Write Text to File" to log the failed row's identifier and error message to a log file, so nothing fails silently mid-run. Add an inner If check at the start of each loop iteration: if a required field in the current row is blank, skip that row and write a warning to the log rather than submitting incomplete data. For licensing, Power Automate Desktop is available as part of Microsoft 365 plans and as a standalone paid plan, check Microsoft's current pricing page for the tier that fits your team's size and usage requirements.</p>
+
+<h2>Python and RPA when Excel's built-in tools hit their ceiling</h2>
+
+<h3>Python in Excel and scheduled scripts for data-heavy teams</h3>
+
+<p>Python in Excel (available in Microsoft 365 on Windows, Version 2408+) lets users write pandas, NumPy, and matplotlib code directly inside cells using the =PY() formula. Calculations run in secure Microsoft cloud containers and return results as native Excel values, which means complex transformations that would require hundreds of lines of VBA run in a single cell formula instead.</p>
+
+<p>For external data pipelines that pull from a database, clean a multi-source dataset, and write results back to Excel, a scheduled Python script using openpyxl or xlwings running via Windows Task Scheduler is more reliable than keeping Excel open. Finance and operations teams running nightly reconciliation, particularly those with data living outside Microsoft 365, are strong candidates for this approach.</p>
+
+<h3>RPA tools and when a custom bot makes more sense than a DIY flow</h3>
+
+<p>Three RPA options are most relevant to SMBs in 2026. Microsoft Power Automate starts at $15 per user per month and is the strongest choice for Microsoft 365 shops. UiPath starts at approximately $420 per user per month and is designed for complex multi-application automation at enterprise scale. Zoho offers workflow automation tools, available within its broader product suite, that work well for smaller teams already in the Zoho ecosystem; contact Zoho directly for current pricing on the plan that matches your use case.</p>
+
+<p>The tipping point where DIY stops being worth it is when the process touches a web portal with no export button, moves data across three or more systems, or produces output that feeds compliance reports. At that point, getting a professional assessment pays off quickly.</p>
+
+<h2>Test, validate, and back up before you trust the automation</h2>
+
+<h3>Verifying your output is accurate before going live</h3>
+
+<p>Run the automation against a controlled test dataset where you already know the correct output, then compare the result row by row against expected values. For Power Query and Power Automate flows, add a row count check: confirm the number of rows imported or submitted matches the source record count so silent skips are caught before the automation touches real data.</p>
+
+<p>Check for data type drift specifically: dates stored as text, numbers formatted as currency strings, and blank fields that should carry a default value. These issues appear immediately in downstream reports and are much harder to diagnose after weeks of accumulated data.</p>
+
+<h3>Backup habits that prevent a bad macro from wiping your data</h3>
+
+<p>Keep a timestamped backup copy of the workbook before every macro run during the testing phase, using a naming convention like DataEntry_Backup_2026-07-07.xlsm. For Power Query workbooks, export the query definition by right-clicking the query and selecting "Export Connection File" so you can restore it if the query gets corrupted or accidentally deleted.</p>
+
+<p>Once the automation is stable, move backups to a scheduled task: OneDrive version history, a Python backup script, or an RPA task that copies the file to a network folder before each run. Manual backups are a testing habit; scheduled backups are a production requirement.</p>
+
+<h2>Putting it all together</h2>
+
+<p>Now that you know how to automate data entry in Excel across the full complexity range, the natural progression is to start with one method and expand as the process scales. The decision framework: Power Query for recurring imports, macros and VBA for form-to-table entry on desktop Excel, Power Automate Desktop for cross-app flows without writing code, and Python or RPA when the process involves multiple systems or compliance-grade outputs. The testing and backup habits covered above are what keep automations running reliably long after the initial build.</p>
+
+<p>If your data entry process runs across multiple systems, pulls from a portal with no export button, or feeds reports that people depend on every week, the DIY path gets expensive in time and ongoing maintenance.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>How do I automate data entry in Excel without writing code?</h3>
+
+<p>Power Query is the easiest no-code option. Connect it to a CSV, JSON, or web source once, apply your cleaning steps, and it refreshes automatically every time you open the file, no formulas or scripts required.</p>
+
+<h3>How long does it take to set up Power Query for recurring imports?</h3>
+
+<p>Most Power Query connections take 15 to 30 minutes to configure for the first time. Once saved, the query runs on every refresh without any additional setup.</p>
+
+<h3>Can I automate Excel data entry from a web form or portal?</h3>
+
+<p>Yes. Power Automate Desktop can read rows from an Excel table and submit them to a web form automatically. For portals with no export button, a full RPA bot is the more robust solution.</p>
+
+<h3>What's the difference between a macro and Power Automate for Excel automation?</h3>
+
+<p>A macro (VBA) runs inside Excel and is best for moving data between sheets or tables within the same workbook. Power Automate connects Excel to external applications, web forms, databases, or other Microsoft 365 services, making it the right choice when data needs to move across systems.</p>
+
+<h3>Is Python in Excel available to all Microsoft 365 users?</h3>
+
+<p>Python in Excel is available on Microsoft 365 for Windows (Version 2408 and later). It is not available in Excel for Mac or in standalone Excel desktop licenses as of mid-2026.</p>
+
+  <div class="cta-box">
+    <h2>Want this handled for you?</h2>
+    <p>Tell me about the manual process eating your team's week. Within two business days you get a free written process audit: what's worth automating, roughly how many hours it's costing you, and a fixed-price quote if you want it built.</p>
+    <a class="btn btn-primary" href="/#contact">Get my free process audit</a>
+    <p class="microline">Or call/text <a class="tel-link" href="tel:+17726216100" data-label="phone_click_article_cta">(772) 621-6100</a> · <a href="mailto:job@jobpaulautomation.com?subject=Free%20process%20audit">job@jobpaulautomation.com</a> · West Palm Beach, FL</p>
+  </div>
+
+  <section class="more-guides" aria-label="More guides">
+    <h2>More guides</h2>
+    <ul>
+      <li><a href="/articles/what-is-business-process-automation.html">What Is Business Process Automation? A Plain-English Guide</a></li>
+      <li><a href="/articles/best-ai-agents-for-small-business-2026.html">Best AI Agents for Small Business in 2026</a></li>
+      <li><a href="/articles/how-much-does-an-automation-consultant-cost.html">How Much Does an Automation Consultant Cost in 2026?</a></li>
+      <li><a href="/articles/can-chatgpt-automate-excel.html">Can ChatGPT Automate Excel? What It Can (and Can't) Do</a></li>
+      <li><a href="/articles/how-to-automate-a-web-portal-with-no-api.html">How to Automate a Web Portal With No API</a></li>
+    </ul>
+  </section>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-contact"><a class="tel-link" href="tel:+17726216100" data-label="phone_click_article_footer">(772) 621-6100</a> · <a href="mailto:job@jobpaulautomation.com?subject=Free%20process%20audit">job@jobpaulautomation.com</a> · West Palm Beach, FL</div>
+    <div>© <span id="yr"></span> Job Paul · <a href="/">Automation &amp; AI</a> · <a href="/articles/">All guides</a></div>
+  </div>
+</footer>
+
+<script>
+  /* Tracking — same GA4 property + Meta pixel as the homepage (wired 2026-07-06) */
+  var GA4_ID = "G-3FDB4MJE69";
+  var META_PIXEL_ID = "132377665665168";
+  if (GA4_ID) {
+    var gs = document.createElement('script'); gs.async = true;
+    gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+    document.head.appendChild(gs);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', GA4_ID);
+  }
+  if (META_PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID); fbq('track', 'PageView');
+  }
+  function trackLead(label){
+    if (window.fbq) fbq('track', 'Lead', {content_name: label});
+    if (window.gtag) gtag('event', 'generate_lead', {event_label: label});
+  }
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var btn = document.getElementById('menu-btn'), links = document.getElementById('nav-links');
+  btn.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){ if(e.target.tagName==='A'){ links.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
+  document.querySelectorAll('.tel-link').forEach(function(a){
+    a.addEventListener('click', function(){ trackLead(a.getAttribute('data-label') || 'phone_click'); });
+  });
+</script>
+</body>
+</html>

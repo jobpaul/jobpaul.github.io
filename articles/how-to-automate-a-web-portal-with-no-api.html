@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Automate a Web Portal With No API | Job Paul Automation &amp; AI</title>
+<meta name="description" content="How to automate a web portal with no API: find hidden endpoints in DevTools, use Playwright or HTTP scraping, handle logins, and run bots on a schedule.">
+<link rel="canonical" href="https://jobpaulautomation.com/articles/how-to-automate-a-web-portal-with-no-api.html">
+<meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#faf7f1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%231d2433'/%3E%3Ctext%20x='32'%20y='42'%20font-family='Arial,sans-serif'%20font-size='28'%20font-weight='bold'%20fill='%23f59e0b'%20text-anchor='middle'%3EJP%3C/text%3E%3C/svg%3E">
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jobpaulautomation.com/articles/how-to-automate-a-web-portal-with-no-api.html">
+<meta property="og:title" content="How to Automate a Web Portal With No API">
+<meta property="og:description" content="How to automate a web portal with no API: find hidden endpoints in DevTools, use Playwright or HTTP scraping, handle logins, and run bots on a schedule.">
+<meta property="og:image" content="https://jobpaulautomation.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-07-07">
+<meta property="article:author" content="Job Paul">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Automate a Web Portal With No API">
+<meta name="twitter:description" content="How to automate a web portal with no API: find hidden endpoints in DevTools, use Playwright or HTTP scraping, handle logins, and run bots on a schedule.">
+<meta name="twitter:image" content="https://jobpaulautomation.com/og.png">
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://jobpaulautomation.com/articles/how-to-automate-a-web-portal-with-no-api.html#article",
+  "mainEntityOfPage": "https://jobpaulautomation.com/articles/how-to-automate-a-web-portal-with-no-api.html",
+  "headline": "How to Automate a Web Portal With No API",
+  "description": "How to automate a web portal with no API: find hidden endpoints in DevTools, use Playwright or HTTP scraping, handle logins, and run bots on a schedule.",
+  "image": "https://jobpaulautomation.com/og.png",
+  "inLanguage": "en-US",
+  "datePublished": "2026-07-07",
+  "dateModified": "2026-07-07",
+  "author": {
+    "@type": "Person",
+    "name": "Job Paul",
+    "jobTitle": "Automation Engineer & AI Consultant",
+    "url": "https://jobpaulautomation.com/",
+    "sameAs": ["https://www.linkedin.com/in/job-paul", "https://github.com/jobpaul", "https://www.upwork.com/freelancers/~01923931c4a7cdd19c"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Job Paul Automation & AI",
+    "url": "https://jobpaulautomation.com/",
+    "logo": {"@type": "ImageObject", "url": "https://jobpaulautomation.com/og.png"}
+  },
+  "isPartOf": {"@type": "Blog", "@id": "https://jobpaulautomation.com/articles/#guides", "name": "Automation & AI Guides"}
+}
+</script>
+<style>
+  :root{
+    --paper:#faf7f1; --paper2:#f1ece1; --card:#ffffff; --line:#e3dccd;
+    --ink:#1d2433; --soft:#57637a; --teal:#0e6b75; --cta:#f59e0b; --cta-ink:#221803;
+    --green:#15803d; --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;letter-spacing:-.01em}
+
+  /* Buttons */
+  .btn{display:inline-block;padding:14px 28px;border-radius:10px;font-weight:800;font-size:1rem;border:0;cursor:pointer}
+  .btn-primary{background:var(--cta);color:var(--cta-ink);box-shadow:0 2px 10px rgba(180,120,10,.25)}
+  .btn-primary:hover{filter:brightness(1.06);text-decoration:none}
+  .microline{font-size:.85rem;color:var(--soft);margin-top:10px}
+
+  /* Nav (same as homepage) */
+  nav{position:sticky;top:0;z-index:50;background:rgba(250,247,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
+  .logo{font-weight:800;font-size:1.05rem;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .logo span{color:var(--cta)}
+  .nav-links{display:flex;gap:20px;font-size:.92rem;align-items:center}
+  .nav-links a{color:var(--soft)}
+  .nav-links a:hover{color:var(--ink);text-decoration:none}
+  .nav-phone{font-weight:700;color:var(--ink) !important;white-space:nowrap}
+  .nav-cta{background:var(--cta);color:var(--cta-ink) !important;padding:9px 16px;border-radius:8px;font-weight:800;white-space:nowrap}
+  .nav-cta:hover{filter:brightness(1.06);text-decoration:none}
+  #menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 12px;font-size:1rem;cursor:pointer}
+
+  /* Article prose */
+  .article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 64px}
+  .crumb{font-size:.9rem;margin-bottom:18px}
+  .article-wrap h1{font-size:clamp(1.9rem,4.5vw,2.6rem);line-height:1.15;margin-bottom:14px}
+  .byline{color:var(--soft);font-size:.92rem;margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .article-wrap h2{font-size:1.55rem;margin:42px 0 12px}
+  .article-wrap h3{font-size:1.18rem;margin:30px 0 10px}
+  .article-wrap p{margin-bottom:16px}
+  .article-wrap ul,.article-wrap ol{margin:0 0 16px 24px}
+  .article-wrap li{margin-bottom:8px}
+  .article-wrap pre{background:var(--ink);color:#e8ecf4;border-radius:10px;padding:18px;overflow-x:auto;font-size:.85rem;line-height:1.5;margin:0 0 16px}
+  .article-wrap pre code{background:none;color:inherit;padding:0}
+  .article-wrap code{background:var(--paper2);border-radius:5px;padding:2px 6px;font-size:.88em;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .tldr{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--cta);border-radius:10px;padding:18px 22px;margin-bottom:28px;font-size:.98rem}
+  .tldr strong{color:var(--teal)}
+
+  /* CTA box */
+  .cta-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;text-align:center;margin:44px 0 8px}
+  .cta-box h2{margin:0 0 10px;font-size:1.45rem}
+  .cta-box p{color:var(--soft);max-width:560px;margin:0 auto 20px}
+  .cta-box .microline{margin-top:14px}
+
+  /* More guides */
+  .more-guides{margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
+  .more-guides h2{font-size:1.25rem;margin-bottom:14px}
+  .more-guides ul{list-style:none;margin:0}
+  .more-guides li{padding:8px 0;border-bottom:1px dashed var(--line)}
+  .more-guides li:last-child{border-bottom:0}
+
+  footer{border-top:1px solid var(--line);padding:30px 0 34px;color:var(--soft);font-size:.85rem;text-align:center}
+  footer .foot-contact{margin-bottom:8px}
+  footer a{font-weight:600}
+
+  @media(max-width:760px){
+    .nav-links{display:none;position:absolute;top:62px;left:0;right:0;background:var(--card);flex-direction:column;padding:18px 24px;border-bottom:1px solid var(--line);align-items:flex-start}
+    .nav-links.open{display:flex}
+    #menu-btn{display:block}
+    .article-wrap{padding:32px 24px 48px}
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap nav-inner">
+    <a class="logo" href="/">job<span>.</span>paul</a>
+    <button id="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="/articles/">All guides</a>
+      <a href="/#services">What I automate</a>
+      <a href="/#faq">FAQ</a>
+      <a class="nav-phone tel-link" href="tel:+17726216100" data-label="phone_click_article_header">(772) 621-6100</a>
+      <a class="nav-cta" href="/#contact">Get my free process audit</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<article class="article-wrap">
+  <p class="crumb"><a href="/articles/">← All guides</a></p>
+  <h1>How to Automate a Web Portal With No API</h1>
+  <p class="byline">By <a href="/">Job Paul</a> — automation engineer &amp; AI consultant, West Palm Beach, FL · Published <time datetime="2026-07-07">July 7, 2026</time></p>
+  <div class="tldr"><strong>TL;DR:</strong> Before building anything, open DevTools and check the Network tab for hidden JSON endpoints — many portals with no documented API still have internal ones you can call directly with a Python script. If the page is server-rendered, use direct HTTP requests with the requests library and BeautifulSoup; for JavaScript-heavy portals, drive a real browser with Playwright or an RPA platform like UiPath. Save session state to handle logins, build in validation alerts so silent failures get caught, and schedule unattended runs. If a portal task eats two or more hours a week, that's over 100 hours a year — payback is typically under three months.</div>
+
+<p>You know the portal. It shows exactly the data you need: vendor invoices, compliance records, employee eligibility statuses. But there's no export button that works reliably, no API documentation, and no integration with anything else you use. Just a login screen, a table, and someone on your team copying rows into a spreadsheet every Monday morning.</p>
+
+<p>If you're wondering how to automate a web portal with no API, the first thing to know is that it's more straightforward than most people assume. It's one of the most common problems in operations work — finance teams, HR managers, and operations leads run into it equally. The bad news is that there's no single right answer. The best approach depends entirely on how that portal is built. This article walks you through the decision process, from a fast first check that could save you weeks of work to a production-grade scheduled bot that runs overnight without anyone watching it.</p>
+
+<h2>How to Automate a Web Portal With No API, Check for Hidden Endpoints First</h2>
+
+<p>Most modern portals, even ones with no documented public API, communicate with a backend using internal API calls. The portal's JavaScript sends requests to a server and receives structured data back, usually as JSON. These calls are completely visible if you know where to look. In some cases, finding one can turn a multi-week build into a quick Python script, the exact time savings vary depending on how cleanly the endpoint is structured and what authentication it requires, but it's consistently one of the highest-leverage checks you can run.</p>
+
+<h3>How browser DevTools exposes undocumented endpoints</h3>
+
+<p>Open the portal in Chrome or Firefox, press F12 to open DevTools, and navigate to the Network tab. Enable "Preserve log" and "Disable cache," then click the Fetch/XHR filter. Now interact with the page exactly as you would manually: run a search, click to the next page of results, or trigger a report. Watch what requests fire in the Network tab as you do it. If a request returns a clean JSON response containing the data you need, you already have your data source. Replicating that request with Python's requests library is generally far simpler, faster, and more maintainable than building a full browser bot, though you'll still need to handle authentication headers and watch for anti-bot protections on the server side.</p>
+
+<h3>What to do when no endpoint appears in Fetch/XHR</h3>
+
+<p>If you interact with the page and nothing fires in the Fetch/XHR tab, start by widening your search before concluding there's no API. Check the WebSocket tab for streaming connections, and look for activity from any registered service workers. Some portals deliver data through those channels rather than standard XHR requests. For a more thorough check, route your browser traffic through a proxy like mitmproxy, Burp Suite, or Charles Proxy, these intercept all network traffic and surface requests that DevTools can miss. If you've done all of that and still see no structured data endpoint, the page is most likely server-rendered: the HTML is generated on the server and sent back as a complete document, with no hidden JSON endpoint to call directly. That's when browser automation becomes the right tool, and it's where the next section picks up.</p>
+
+<h2>Browser Automation and RPA: Navigating Portals Without an API</h2>
+
+<p>When there's no hidden API to call, the most reliable approach is to control a browser programmatically. The bot logs in, navigates, clicks buttons, reads data, and downloads files exactly as a human would. That said, be aware that some portals use bot-detection measures, fingerprinting, behavioral analysis, or headless browser detection, that can block automated sessions. Mitigation strategies like stealth browser settings, human-paced interactions, and session reuse reduce that risk considerably.</p>
+
+<h3>How a browser bot actually works</h3>
+
+<p>Tools like Playwright and Selenium launch a browser instance (either visible or headless) and drive it through code. RPA platforms like UiPath and Power Automate Desktop do the same thing but wrap the behavior in a visual recorder, making the process accessible to non-developers. For new builds in 2026, Playwright is the preferred tool for development work. Its built-in auto-waiting logic handles a major class of failures that plagued older Selenium scripts, where the bot would attempt to click a button before the page had fully rendered it as clickable. That single improvement eliminates enormous amounts of debugging time in production.</p>
+
+<h3>Real portals where this approach works</h3>
+
+<p>Government portals are the clearest example: state licensing boards, SAM.gov exclusion searches, county permit databases. These systems rarely expose APIs and are built on legacy stacks that haven't been updated in years. A scheduled browser bot can log in nightly, extract the records it needs, and write them to a spreadsheet or database without anyone sitting at a keyboard. Insurance eligibility portals and legacy vendor ERP systems follow the exact same pattern. The portal was designed for human users; the bot plays that role instead.</p>
+
+<h2>Screen Scraping via Direct HTTP Requests: The Faster Alternative</h2>
+
+<p>If the portal's pages are primarily server-rendered HTML rather than a JavaScript-heavy single-page application, you may be able to skip launching a browser entirely. Instead of controlling a browser, you send the same HTTP requests the browser sends and parse the HTML response directly using Python's requests library combined with BeautifulSoup for parsing.</p>
+
+<h3>When direct HTTP emulation is the better choice</h3>
+
+<p>This method is significantly faster and less resource-intensive than spinning up a browser. It works well for portals that display data in standard HTML tables or basic forms, which is common in older government systems and legacy vendor portals. If the data you need is visible in the page's source HTML (right-click and "View Page Source" to check), direct HTTP is worth attempting before reaching for a browser automation tool.</p>
+
+<h3>The catch: headers, cookies, and session tokens</h3>
+
+<p>The tricky part is accurate replication. The server expects every header, cookie, and session token the browser normally sends. One missing value and the server returns a login redirect instead of your data. Use the same DevTools Network tab to copy the full request headers from a successful manual session. Most Python scraping scripts for portal automation are built exactly this way: capture a working manual request once, replicate it programmatically, and parameterize the parts that change between runs.</p>
+
+<h2>The Authentication Problem: Keeping Your Bot Logged In</h2>
+
+<p>A surprising number of portal automation projects fail not because of bad selectors or wrong URLs. They fail because the session expires and the bot keeps scraping a login page instead of real data, often silently returning empty results for days before anyone notices.</p>
+
+<h3>Form logins and cookie persistence</h3>
+
+<p>The fix is explicit session management. For direct HTTP scripts, save cookies after the initial login request and reuse that cookie jar across all subsequent requests in the same session. For Playwright-based bots, save the browser's storage state immediately after a successful login and load that state at the start of each scheduled run. This avoids re-authenticating from scratch on every execution, which both speeds up the run and reduces the chance of triggering suspicious login behavior flags.</p>
+
+<h3>Handling 2FA and SSO portals</h3>
+
+<p>Two-factor authentication is increasingly common even on older portals, and it's usually the first question that comes up once you decide to pursue automation. For TOTP-based 2FA (the kind where you open Google Authenticator and read a six-digit code), you can fully automate code generation if you have access to the TOTP secret key. UiPath provides a dedicated activity package for this.</p>
+
+<p>For SMS or email-based codes, the practical solution is a "human in the loop" step: the bot pauses and waits for manual input before continuing. SSO and SAML redirect flows can be handled by browser automation by following the redirect chain exactly as a human would, but they require careful session state management at each step in the chain.</p>
+
+<h2>Keeping the Bot Running Reliably on a Schedule</h2>
+
+<p>A one-time extraction script is useful. A bot that runs every night at 2 a.m., pulls fresh data, and emails a formatted report is what actually saves your team hours each week. Getting from the first to the second requires a few production-grade habits.</p>
+
+<h3>Scheduling and unattended execution</h3>
+
+<p>Scheduling can be as straightforward as a Windows Task Scheduler job calling your Python script or a Linux cron job on a small cloud VM. The key requirement is that no one needs to watch it run. Build explicit waits into every interaction, not fixed sleep timers. A fixed time.sleep(3) works on a fast connection and fails on a slow one. An explicit wait that listens for the element to appear adapts to whatever the portal's load time happens to be that night.</p>
+
+<h3>Handling UI changes and building in alerts</h3>
+
+<p>Portals change. A government system may update its table structure after a maintenance window and silently break your selector. The bot won't throw an error; it will return zero records, which is worse than an error because it looks like success. Build validation logic into every run: if the expected number of records is zero when it shouldn't be, send an email alert before writing anything to your output file. Use descriptive selectors based on visible text content or ARIA labels rather than absolute XPath strings. An absolute XPath breaks the moment a developer adds a wrapper div. A selector built on the button's visible label text survives most redesigns intact.</p>
+
+<h2>How to Know if Your Portal Is Actually Worth Automating</h2>
+
+<p>The math on portal automation is usually straightforward. If someone on your team spends two or more hours per week on a specific portal task, that's over 100 hours a year on that one process. To put rough numbers on it: at a fully-loaded staff cost of $40, $60 per hour, that's $4,000, $6,000 in labor annually for a single task. A well-scoped browser automation project often comes in well under that figure, which is why the payback period is typically under three months, though your exact return will depend on build complexity and your team's actual hourly cost. Portals with consistent structure, predictable login behavior, and stable data layouts are the best candidates. Insurance eligibility portals, legacy vendor order histories, and government compliance databases tend to check all three boxes because they change slowly by design.</p>
+
+<h3>When to get a second opinion before spending money</h3>
+
+<p>Not every portal is automatable at a reasonable cost. Some portals actively detect and block automated access. Others use CAPTCHAs that make fully unattended login impractical without third-party solving services, which introduce their own reliability and legal questions, and those services aren't the only option. Alternatives worth exploring include negotiating service account access directly with the vendor, building in a human-in-the-loop step for the login challenge, or requesting a proper API integration if the vendor relationship allows it. Some legacy systems rely on outdated browser plugins (such as NPAPI-based extensions or Java applets) that complicate automation significantly, though attended automation or a virtualized legacy browser environment can sometimes work around those constraints. Before committing development budget, it's worth having an experienced eye look at the specific portal and give you an honest assessment.</p>
+
+<p>That's exactly what the free written process audit at Job Paul, Automation &amp; AI Consultant is designed to do. You describe the portal and the task, and within two business days you receive a written assessment covering whether the portal is a viable automation target, an estimate of hours saved per week, and a fixed-price quote for the build. No engagement required. That kind of upfront clarity before any money changes hands is rare in this space, and worth asking for.</p>
+
+<h2>Choosing the Right Approach: A Decision Framework for Web Portal Automation</h2>
+
+<p>The decision framework for how to automate a web portal with no API isn't complicated. Start with DevTools and check for a hidden JSON endpoint. If one exists, a Python script calling that endpoint directly is your fastest and most maintainable path. If the portal is server-rendered with no internal API calls, widen your network check to WebSockets and service workers before ruling it out entirely. For pages that are genuinely static HTML, direct HTTP emulation with requests and BeautifulSoup is the leaner option. For anything dynamic or JavaScript-heavy, move to full browser automation with Playwright or an RPA platform.</p>
+
+<p>Handle authentication with saved session state, automate TOTP generation where possible, and build a human checkpoint for SMS-based 2FA. Schedule for unattended runs and add validation alerts so you know immediately when something changes. Government portals, insurance platforms, and legacy vendor systems are consistently strong candidates for this type of automation precisely because they change slowly, follow predictable patterns, and are used heavily for repetitive tasks that eat hours every week.</p>
+
+<p>The technical barriers are real but solvable. The business case is usually obvious once you do the time math.</p>
+
+  <div class="cta-box">
+    <h2>Want this handled for you?</h2>
+    <p>Tell me about the manual process eating your team's week. Within two business days you get a free written process audit: what's worth automating, roughly how many hours it's costing you, and a fixed-price quote if you want it built.</p>
+    <a class="btn btn-primary" href="/#contact">Get my free process audit</a>
+    <p class="microline">Or call/text <a class="tel-link" href="tel:+17726216100" data-label="phone_click_article_cta">(772) 621-6100</a> · <a href="mailto:job@jobpaulautomation.com?subject=Free%20process%20audit">job@jobpaulautomation.com</a> · West Palm Beach, FL</p>
+  </div>
+
+  <section class="more-guides" aria-label="More guides">
+    <h2>More guides</h2>
+    <ul>
+      <li><a href="/articles/what-is-business-process-automation.html">What Is Business Process Automation? A Plain-English Guide</a></li>
+      <li><a href="/articles/how-to-automate-data-entry-in-excel.html">How to Automate Data Entry in Excel (Step-by-Step)</a></li>
+      <li><a href="/articles/best-ai-agents-for-small-business-2026.html">Best AI Agents for Small Business in 2026</a></li>
+      <li><a href="/articles/how-much-does-an-automation-consultant-cost.html">How Much Does an Automation Consultant Cost in 2026?</a></li>
+      <li><a href="/articles/can-chatgpt-automate-excel.html">Can ChatGPT Automate Excel? What It Can (and Can't) Do</a></li>
+    </ul>
+  </section>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-contact"><a class="tel-link" href="tel:+17726216100" data-label="phone_click_article_footer">(772) 621-6100</a> · <a href="mailto:job@jobpaulautomation.com?subject=Free%20process%20audit">job@jobpaulautomation.com</a> · West Palm Beach, FL</div>
+    <div>© <span id="yr"></span> Job Paul · <a href="/">Automation &amp; AI</a> · <a href="/articles/">All guides</a></div>
+  </div>
+</footer>
+
+<script>
+  /* Tracking — same GA4 property + Meta pixel as the homepage (wired 2026-07-06) */
+  var GA4_ID = "G-3FDB4MJE69";
+  var META_PIXEL_ID = "132377665665168";
+  if (GA4_ID) {
+    var gs = document.createElement('script'); gs.async = true;
+    gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+    document.head.appendChild(gs);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', GA4_ID);
+  }
+  if (META_PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID); fbq('track', 'PageView');
+  }
+  function trackLead(label){
+    if (window.fbq) fbq('track', 'Lead', {content_name: label});
+    if (window.gtag) gtag('event', 'generate_lead', {event_label: label});
+  }
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var btn = document.getElementById('menu-btn'), links = document.getElementById('nav-links');
+  btn.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function(e){ if(e.target.tagName==='A'){ links.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
+  document.querySelectorAll('.tel-link').forEach(function(a){
+    a.addEventListener('click', function(){ trackLead(a.getAttribute('data-label') || 'phone_click'); });
+  });
+</script>
+</body>
+</html>
