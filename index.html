@@ -59,13 +59,16 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "What kinds of work can you automate?", "acceptedAnswer": {"@type": "Answer", "text": "Repetitive computer work: data entry, report generation, screening and compliance checks, document generation, file organization, moving data between systems that don't talk to each other, and web-portal workflows. If your team does it the same way every week, it's probably automatable."}},
-    {"@type": "Question", "name": "What does an automation project cost?", "acceptedAnswer": {"@type": "Answer", "text": "Every project gets a fixed quote up front after a short, free process audit — no open-ended hourly creep. Start with the audit: describe the manual process, and I'll tell you what automating it takes."}},
+    {"@type": "Question", "name": "What kinds of work can you automate?", "acceptedAnswer": {"@type": "Answer", "text": "Repetitive computer work: data entry between files, spreadsheets, and systems; Excel cleanup and weekly reports; pulling data from web portals (even ones with no API or export button); compliance checks against lists like SAM.gov, OIG, and NSOPW; document generation and file organization; and AI document workflows that read, sort, and draft from incoming files. If your team does it the same way every week, it's probably automatable."}},
+    {"@type": "Question", "name": "What does an automation project cost?", "acceptedAnswer": {"@type": "Answer", "text": "Small, single-task automations start at $150 and take about 3 days. Multi-step workflows run around $450, and end-to-end pipelines (multiple systems, scheduled, with logging) around $950. Bigger custom projects get a fixed-price quote after a free written process audit — you'll know the cost before spending a dollar. Consulting runs $65/hr if you'd rather pay hourly."}},
+    {"@type": "Question", "name": "How do I know what's worth automating?", "acceptedAnswer": {"@type": "Answer", "text": "Send a screen recording or plain-English description of the manual process. You get a free written process audit within two business days: which tasks are worth automating, estimated hours saved, and a fixed-price quote. No call required."}},
     {"@type": "Question", "name": "How fast can you deliver?", "acceptedAnswer": {"@type": "Answer", "text": "Small automations often ship in days. Larger pipelines are scoped in the first call, with a pilot first so you see value before committing to more."}},
     {"@type": "Question", "name": "Will automation replace my staff?", "acceptedAnswer": {"@type": "Answer", "text": "No — it gives them their hours back. The goal is taking the copy-paste, re-typing, and checking off their plates so they can do the work you actually hired them for. The robot does the boring part; your people review the exceptions."}},
     {"@type": "Question", "name": "Our software has no API or export button — can you still automate it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. That's a specialty. Software robots can log into a portal, click, type, and read the screen the same way a person would — reliably, on a schedule. If a person can do it through the screen, a robot usually can too."}},
+    {"@type": "Question", "name": "Can ChatGPT or AI automate my Excel work?", "acceptedAnswer": {"@type": "Answer", "text": "Partly — AI is excellent at one-off cleanups and drafting formulas, but it won't reliably run your month-end report at 6am every Monday. That takes a scheduled script or software robot with error handling. The practical answer is usually both: AI where judgment is needed, plain automation for the repetitive 95%. That hybrid is exactly what I build."}},
+    {"@type": "Question", "name": "Is RPA being replaced by AI?", "acceptedAnswer": {"@type": "Answer", "text": "No — they're merging. RPA moves data and clicks reliably; AI reads documents and makes judgment calls. The strongest automations use RPA for the hands and AI for the head. I have ~20 production automations running at a large healthcare company today built on that split."}},
     {"@type": "Question", "name": "We're a small team — is automation worth it for us?", "acceptedAnswer": {"@type": "Answer", "text": "If a process repeats every week, it's usually worth doing the math. A task that takes 30 minutes a day is roughly 125 hours a year. The audit is free either way — and if automation won't pay for itself, I'll tell you that straight."}},
-    {"@type": "Question", "name": "What happens if something breaks later?", "acceptedAnswer": {"@type": "Answer", "text": "Every build ships with logging and plain-English documentation. If your systems change and something stops working, support options are part of the quote — you'll never be stuck with a black box."}},
+    {"@type": "Question", "name": "What happens if something breaks later?", "acceptedAnswer": {"@type": "Answer", "text": "Anything can break; good automations fail loudly instead of silently. Every build ships with error handling, logging, and plain-English documentation. If your systems change and something stops working, support options are part of the quote — you'll never be stuck with a black box."}},
     {"@type": "Question", "name": "Is my business data safe?", "acceptedAnswer": {"@type": "Answer", "text": "Your process details stay confidential, and I'm happy to sign your NDA before we talk specifics. Automations run in your environment, on your accounts — your data doesn't move into mine."}},
     {"@type": "Question", "name": "Do you work remotely or only in South Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Both. I'm based in West Palm Beach, FL and work with local businesses in person — Palm Beach County, Boca Raton, Delray Beach, Fort Lauderdale, Port St. Lucie, Stuart — and with clients anywhere in the US remotely."}}
   ]
@@ -280,6 +283,7 @@
       <a href="#how">How it works</a>
       <a href="#case">Case study</a>
       <a href="#faq">FAQ</a>
+      <a href="/articles/">Guides</a>
       <a class="nav-phone tel-link" href="tel:+17726216100" data-label="phone_click_header">(772) 621-6100</a>
       <a class="nav-cta" href="#contact">Get my free process audit</a>
     </div>
@@ -447,10 +451,13 @@
     <h2>Common questions</h2>
     <div style="margin-top:24px">
       <details class="faq-item"><summary>What kinds of work can you automate?</summary>
-        <p>Repetitive computer work: data entry, report generation, screening and compliance checks, document generation, file organization, moving data between systems that don't talk to each other, and web-portal workflows. If your team does it the same way every week, it's probably automatable.</p>
+        <p>Repetitive computer work: data entry between files, spreadsheets, and systems; Excel cleanup and weekly reports; pulling data from web portals (even ones with no API or export button); compliance checks against lists like SAM.gov, OIG, and NSOPW; document generation and file organization; and AI document workflows that read, sort, and draft from incoming files. If your team does it the same way every week, it's probably automatable.</p>
       </details>
       <details class="faq-item"><summary>What does an automation project cost?</summary>
-        <p>Every project gets a fixed quote up front after a short, free process audit — no open-ended hourly creep. Start with the audit: describe the manual process, and I'll tell you what automating it takes.</p>
+        <p>Small, single-task automations start at $150 and take about 3 days. Multi-step workflows run around $450, and end-to-end pipelines (multiple systems, scheduled, with logging) around $950. Bigger custom projects get a fixed-price quote after a free written process audit — you'll know the cost before spending a dollar. Consulting runs $65/hr if you'd rather pay hourly. <a href="/articles/how-much-does-an-automation-consultant-cost.html">Full guide: what automation consultants cost in 2026</a>.</p>
+      </details>
+      <details class="faq-item"><summary>How do I know what's worth automating?</summary>
+        <p>Send a screen recording or plain-English description of the manual process. You get a free written process audit within two business days: which tasks are worth automating, estimated hours saved, and a fixed-price quote. No call required.</p>
       </details>
       <details class="faq-item"><summary>How fast can you deliver?</summary>
         <p>Small automations often ship in days. Larger pipelines are scoped in the first call, with a pilot first so you see value before committing to more.</p>
@@ -459,13 +466,19 @@
         <p>No — it gives them their hours back. The goal is taking the copy-paste, re-typing, and checking off their plates so they can do the work you actually hired them for. The robot does the boring part; your people review the exceptions.</p>
       </details>
       <details class="faq-item"><summary>Our software has no API or export button — can you still automate it?</summary>
-        <p>Yes. That's a specialty. Software robots can log into a portal, click, type, and read the screen the same way a person would — reliably, on a schedule. If a person can do it through the screen, a robot usually can too.</p>
+        <p>Yes. That's a specialty. Software robots can log into a portal, click, type, and read the screen the same way a person would — reliably, on a schedule. If a person can do it through the screen, a robot usually can too. <a href="/articles/how-to-automate-a-web-portal-with-no-api.html">Full guide: automating a web portal with no API</a>.</p>
+      </details>
+      <details class="faq-item"><summary>Can ChatGPT or AI automate my Excel work?</summary>
+        <p>Partly — AI is excellent at one-off cleanups and drafting formulas, but it won't reliably run your month-end report at 6am every Monday. That takes a scheduled script or software robot with error handling. The practical answer is usually both: AI where judgment is needed, plain automation for the repetitive 95%. That hybrid is exactly what I build. <a href="/articles/can-chatgpt-automate-excel.html">Full guide: can ChatGPT automate Excel?</a></p>
+      </details>
+      <details class="faq-item"><summary>Is RPA being replaced by AI?</summary>
+        <p>No — they're merging. RPA moves data and clicks reliably; AI reads documents and makes judgment calls. The strongest automations use RPA for the hands and AI for the head. I have ~20 production automations running at a large healthcare company today built on that split.</p>
       </details>
       <details class="faq-item"><summary>We're a small team — is automation worth it for us?</summary>
         <p>If a process repeats every week, it's usually worth doing the math. A task that takes 30 minutes a day is roughly 125 hours a year. The audit is free either way — and if automation won't pay for itself, I'll tell you that straight.</p>
       </details>
       <details class="faq-item"><summary>What happens if something breaks later?</summary>
-        <p>Every build ships with logging and plain-English documentation. If your systems change and something stops working, support options are part of the quote — you'll never be stuck with a black box.</p>
+        <p>Anything can break; good automations fail loudly instead of silently. Every build ships with error handling, logging, and plain-English documentation. If your systems change and something stops working, support options are part of the quote — you'll never be stuck with a black box.</p>
       </details>
       <details class="faq-item"><summary>Is my business data safe?</summary>
         <p>Your process details stay confidential, and I'm happy to sign your NDA before we talk specifics. Automations run in your environment, on your accounts — your data doesn't move into mine.</p>
@@ -564,6 +577,23 @@
       <span class="chip">UiPath (+ CLI)</span><span class="chip">Nintex</span><span class="chip">PowerShell</span><span class="chip">Python</span><span class="chip">SharePoint</span><span class="chip">SQL</span><span class="chip">Claude coding agents</span><span class="chip">MCP servers</span><span class="chip">Agentic pipelines</span><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Vue.js</span><span class="chip">JavaScript</span><span class="chip">PostgreSQL</span><span class="chip">REST APIs</span><span class="chip">Git</span>
     </div>
     <p class="fineprint" style="margin-top:16px">Education: Tech Elevator full-stack bootcamp (14 weeks, 800+ hands-on hours) · Google Ads Certified · ongoing: agentic-AI engineering coursework (Harvard Online, AI Hero, and more).</p>
+  </div>
+</section>
+
+<section id="guides" style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="kicker">Guides</div>
+    <h2>Straight answers to the questions owners actually ask</h2>
+    <p class="sub">Plain-English guides on what automation costs, what's worth automating, and what AI can and can't do — written from production experience, not sales decks.</p>
+    <div class="grid3">
+      <div class="card"><h3><a href="/articles/what-is-business-process-automation.html">What Is Business Process Automation? A Plain-English Guide</a></h3><p>The definition that matters for owners — and where the hours actually go.</p></div>
+      <div class="card"><h3><a href="/articles/how-much-does-an-automation-consultant-cost.html">How Much Does an Automation Consultant Cost in 2026?</a></h3><p>Real market rates — hourly, project, and retainer — and how to get a fixed quote.</p></div>
+      <div class="card"><h3><a href="/articles/how-to-automate-data-entry-in-excel.html">How to Automate Data Entry in Excel (Step-by-Step)</a></h3><p>From Power Query to macros to full RPA, ranked by complexity.</p></div>
+      <div class="card"><h3><a href="/articles/can-chatgpt-automate-excel.html">Can ChatGPT Automate Excel? What It Can (and Can't) Do</a></h3><p>Where AI genuinely helps with spreadsheets — and where it quietly fails.</p></div>
+      <div class="card"><h3><a href="/articles/how-to-automate-a-web-portal-with-no-api.html">How to Automate a Web Portal With No API</a></h3><p>No export button? Software robots can still do the job — here's how.</p></div>
+      <div class="card"><h3><a href="/articles/best-ai-agents-for-small-business-2026.html">Best AI Agents for Small Business in 2026</a></h3><p>Which agent tools deliver ROI, what they cost, and the integration wall reviews skip.</p></div>
+    </div>
+    <p class="fineprint" style="margin-top:18px"><a href="/articles/">All guides →</a></p>
   </div>
 </section>
 </main>

@@ -6,8 +6,18 @@ Job Paul is a working automation engineer with ~20 production automations (estim
 
 ## Main
 
-- [Home — services, free process audit, cost calculator, FAQ, contact](https://jobpaulautomation.com/): the whole site is this one page
+- [Home — services, free process audit, cost calculator, FAQ, contact](https://jobpaulautomation.com/)
+- [All guides](https://jobpaulautomation.com/articles/)
 - [Sitemap](https://jobpaulautomation.com/sitemap.xml)
+
+## Guides (plain-English articles, published 2026-07-07)
+
+- [What Is Business Process Automation? A Plain-English Guide](https://jobpaulautomation.com/articles/what-is-business-process-automation.html)
+- [How Much Does an Automation Consultant Cost in 2026?](https://jobpaulautomation.com/articles/how-much-does-an-automation-consultant-cost.html): market rates hourly/project/retainer + how to get a fixed quote
+- [How to Automate Data Entry in Excel (Step-by-Step)](https://jobpaulautomation.com/articles/how-to-automate-data-entry-in-excel.html)
+- [Can ChatGPT Automate Excel? What It Can (and Can't) Do](https://jobpaulautomation.com/articles/can-chatgpt-automate-excel.html)
+- [How to Automate a Web Portal With No API](https://jobpaulautomation.com/articles/how-to-automate-a-web-portal-with-no-api.html)
+- [Best AI Agents for Small Business in 2026](https://jobpaulautomation.com/articles/best-ai-agents-for-small-business-2026.html)
 
 ## Profiles
 
